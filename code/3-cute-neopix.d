@@ -7,4 +7,4 @@
  /Users/anna/Documents/School/College/Junior/S22/CS240LX/mycode/libpi/include/rpi-extra.h \
  WS2812B.h \
  /Users/anna/Documents/School/College/Junior/S22/CS240LX/mycode/libpi/include/cycle-count.h \
- neopixel.h
+ neopixel.h ads1115.h

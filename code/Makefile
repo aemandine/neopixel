@@ -1,5 +1,5 @@
 # list out the driver program source 
-TEST_SRC = 2-neopix.c 1-blink.c  0-timing-check.c 3-cute-neopix.c
+TEST_SRC = 3-cute-neopix.c
 
 OPT_LEVEL = -O3
 
@@ -7,6 +7,8 @@ OPT_LEVEL = -O3
 #   if you want to use our staff-hc-sr04.o,
 #   comment SRC out and uncomment STAFF_OBJS
 SRC := neopixel.c
+SRC += ads1115.c
+STAFF_OBJS := staff-i2c.o
 
 # define this if you need to give the device for your pi
 TTYUSB = 
