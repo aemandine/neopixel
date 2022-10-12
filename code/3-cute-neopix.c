@@ -38,33 +38,6 @@ void set_one(neo_t h, uint8_t r, uint8_t g, uint8_t b, int index) {
     neopix_flush(h);
 }
 
-void hannah(neo_t h, int delay) {
-    set_all(h, 87, 131, 158);
-    // r: up 71
-    // g: down 39
-    // b: down 12
-    for (int i = 0; i < 12; i++) {
-        set_all(h, 87 + 6*i, 131 - 3*i, 158 - i);
-        delay_ms(delay);
-    }
-    for (int i = 0; i < 12; i++) {
-        set_all(h, 158 - 6*i, 92 + 3*i, 146 + i);
-        delay_ms(delay);
-    }
-}
-
-void bi(neo_t h, int delay) {
-    // r: 255 b: 255 g: 0
-    for (int r = 0; r < 256; r++) {
-        set_all(h, r, 0, 255);
-        delay_ms(delay);
-    }
-    for (int r = 255; r >= 0; r--) {
-        set_all(h, r, 0, 255);
-        delay_ms(delay);
-    }
-}
-
 void halloween(neo_t h, int delay) {
     for (int g = 0; g < 128; g ++) {
         set_all(h, 2*g, g, 0);
@@ -159,8 +132,6 @@ void project(neo_t h) {
     for (int i = 0; i < AVG_NUM; i++){
         last[i] = 0;
     }
-  //  short last_avg = 0;
-//    short last = 100;
     int i = 0;
     while (1) {
         short v = ads1115_read16(dev_addr, conversion_reg);
@@ -178,7 +149,6 @@ void project(neo_t h) {
         }
 
         output("%d\n", v);
-//        last_avg = avg;
         delay_ms(50);
     }
 
